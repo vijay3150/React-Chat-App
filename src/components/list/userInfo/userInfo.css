@@ -28,3 +28,25 @@
   height: 20px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .userInfo {
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .userInfo .user img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .userInfo .icons {
+    gap: 10px;
+  }
+
+  .userInfo .icons img {
+    width: 18px;
+    height: 18px;
+  }
+}

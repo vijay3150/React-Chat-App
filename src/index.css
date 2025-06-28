@@ -1,10 +1,11 @@
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
-  box-sizing: "Lucida Sans", "Lucida Sans Regular","Lucida Grande", "Lucida Sans Unicode", Geneva , Verdana , sans-serif;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-body{
+body {
   background-image: url("/bg.jpg");
   display: flex;
   align-items: center;
@@ -13,19 +14,33 @@ body{
   color: white;
 }
 
-.container{
+.container {
   width: 80vw;
   height: 90vh;
-  background-color: rgba(1,25,40,0.75);
+  background-color: rgba(1, 25, 40, 0.75);
   backdrop-filter: blur(19px) saturate(180%);
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.125);
+  border: 1px solid rgba(255, 255, 255, 0.125);
   display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  position: relative;
 }
 
-.loading{
+.loading {
   padding: 50px;
   font-size: 36px;
   border-radius: 10px;
   background-color: rgba(17, 25, 40, 0.9);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    border-radius: 0;
+    overflow-y: auto;
+    height: auto;
+  }
 }

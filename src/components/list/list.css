@@ -1,5 +1,15 @@
-.list{
-    flex:1;
-    display: flex;
-    flex-direction: column;
+.list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  overflow-y: auto;
+  
+}
+
+@media screen and (max-width: 768px) {
+  .list {
+    width: 100%;
+    max-width: 100%;
+  }
 }

@@ -69,3 +69,25 @@
   width: 2px;
   background-color: #dddddd35;
 }
+
+@media screen and (max-width: 768px) {
+  .login {
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px;
+  }
+
+  .login .item form input,
+  .login .item form button {
+    padding: 15px;
+  }
+
+  .login .item form label img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .login .separator {
+    display: none;
+  }
+}

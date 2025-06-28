@@ -61,3 +61,23 @@
   border: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .addUser {
+    padding: 20px;
+  }
+
+  .addUser form {
+    flex-direction: column;
+  }
+
+  .addUser form input,
+  .addUser form button {
+    width: 100%;
+  }
+
+  .addUser .user .detail img {
+    width: 40px;
+    height: 40px;
+  }
+}

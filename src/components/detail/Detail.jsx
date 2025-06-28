@@ -3,6 +3,8 @@ import { useChatStore } from "../../lib/chatStore";
 import { auth, db } from "../../lib/firebase";
 import { useUserStore } from "../../lib/userStore";
 import "./detail.css";
+import List from "../list/List";
+import Login from "../login/Login";
 
 const Detail = () => {
   const {
@@ -14,6 +16,11 @@ const Detail = () => {
     resetChat,
   } = useChatStore();
   const { currentUser } = useUserStore();
+
+  const tolist = () => {
+    console.log("yes");
+    resetChat();
+  };
 
   const handleBlock = async () => {
     if (!user) return;
@@ -40,7 +47,14 @@ const Detail = () => {
       <div className="user">
         <img src={user?.avatar || "./avatar.png"} alt="" />
         <h2>{user?.username}</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <p>
+          {" "}
+          <span class="btn" onClick={tolist}>
+            {" "}
+            back
+          </span>{" "}
+          Lorem ipsum dolor sit amet.
+        </p>
       </div>
       <div className="info">
         <div className="option">

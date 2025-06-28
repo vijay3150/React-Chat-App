@@ -5,6 +5,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .chat .top {
@@ -60,37 +62,21 @@
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  /* overflow: scroll; */
   display: flex;
   flex-direction: column;
   gap: 20px;
-   &::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent; /* remove white track */
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #555;  /* dark thumb */
-    border-radius: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: #777;
-  }
-}
- .center ::-webkit-scrollbar{
-    width: 8px;
 }
 
- .center::-webkit-scrollbar-track {
+.chat .center::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat .center::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.center::-webkit-scrollbar-thumb {
-  background-color: #444; /* Dark grey thumb */
+.chat .center::-webkit-scrollbar-thumb {
+  background-color: #444;
   border-radius: 10px;
   border: 2px solid transparent;
   background-clip: content-box;
@@ -199,4 +185,58 @@
 .chat .bottom .sendButton:disabled {
   background-color: #5182feb4;
   cursor: not-allowed;
+}
+
+@media screen and (max-width: 768px) {
+  .chat {
+    flex: unset;
+    width: 100%;
+    border: none;
+    max-width: 100%;
+  }
+
+  .chat .top {
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .chat .top .user img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .chat .top .icons {
+    gap: 10px;
+  }
+
+  .chat .center {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .chat .center .message {
+    gap: 10px;
+  }
+
+  .chat .center .message .texts p {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .chat .bottom {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .chat .bottom input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .chat .bottom .sendButton {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
